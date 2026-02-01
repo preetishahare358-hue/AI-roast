@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QUANTUM AI | VIP ELITE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+    :root { 
+        --neon: #00f6ff; 
+        --vip-gold: #ffcc00;
+        --danger: #ff0055; 
+        --bg: #050505;
+    }
+
+    body { 
+        margin: 0; 
+        background: var(--bg); 
+        background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+        color: #fff; 
+        font-family: 'Rajdhani', sans-serif; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        overflow: hidden; 
+    }
+
+    /* Premium Border Animation */
+    .card-wrapper {
+        position: relative;
+        padding: 3px;
+        border-radius: 25px;
+        background: linear-gradient(45deg, transparent, var(--neon), transparent, var(--vip-gold));
+        background-size: 200% 200%;
+        animation: borderFlow 4s linear infinite;
+    }
+
+    @keyframes borderFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .card { 
+        width: 95%; 
+        max-width: 420px; 
+        background: rgba(10, 10, 10, 0.95); 
+        backdrop-filter: blur(20px);
+        border-radius: 22px; 
+        padding: 40px; 
+        text-align: center; 
+        box-shadow: inset 0 0 20px rgba(0, 246, 255, 0.1);
+    }
+
+    h1 { 
+        font-family: 'Orbitron', sans-serif;
+        color: var(--neon); 
+        letter-spacing: 6px; 
+        margin-bottom: 5px; 
+        font-size: 1.5rem;
+        text-shadow: 0 0 15px var(--neon);
+    }
+
+    .vip-tag {
+        font-size: 10px;
+        color: var(--vip-gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    input { 
+        width: 100%; 
+        padding: 18px; 
+        background: rgba(255, 255, 255, 0.03); 
+        border: 1px solid rgba(0, 246, 255, 0.3); 
+        color: #fff; 
+        border-radius: 12px; 
+        outline: none; 
+        font-size: 16px;
+        box-sizing: border-box; 
+        transition: 0.4s;
+        font-family: 'Rajdhani', sans-serif;
+    }
+
+    input:focus { 
+        border-color: var(--vip-gold); 
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    button { 
+        width: 100%; 
+        padding: 16px; 
+        background: linear-gradient(90deg, var(--neon), #00a2ff); 
+        color: #000; 
+        font-weight: 800; 
+        font-family: 'Orbitron', sans-serif;
+        border: none; 
+        border-radius: 12px; 
+        cursor: pointer; 
+        transition: 0.3s;
+        text-transform: uppercase;
+        box-shadow: 0 5px 15px rgba(0, 246, 255, 0.4);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 246, 255, 0.6);
+    }
+
+    button:active { transform: translateY(0); }
+
+    .status-container { 
+        margin-top: 25px; 
+        text-align: left; 
+        background: rgba(0, 0, 0, 0.6); 
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        padding: 15px; 
+        border-radius: 12px; 
+        height: 100px; 
+        overflow-y: auto; 
+        font-size: 12px; 
+        color: #aaa; 
+        font-family: 'Courier New', monospace;
+    }
+
+    .status-line { color: var(--neon); margin-bottom: 4px; display: block; }
+
+    .meme-result { 
+        display: none; 
+        margin-top: 20px; 
+        padding: 20px; 
+        background: linear-gradient(135deg, #222, #000);
+        border-left: 5px solid var(--danger);
+        color: #fff; 
+        border-radius: 8px; 
+        font-size: 1.1rem; 
+        animation: slideIn 0.5s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    @keyframes slideIn { from {opacity: 0; transform: translateY(20px);} }
+
+    /* Premium Loader */
+    .loader {
+        display: none;
+        width: 50px;
+        height: 50px;
+        margin: 20px auto;
+        position: relative;
+    }
+    .loader:before, .loader:after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        border: 3px solid transparent;
+        border-top-color: var(--vip-gold);
+        border-radius: 50%;
+        animation: spin 1s ease infinite;
+    }
+    .loader:after {
+        border-top-color: var(--neon);
+        animation-duration: 1.5s;
+    }
+
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="card-wrapper">
+    <div class="card">
+        <h1>QUANTUM AI</h1>
+        <span class="vip-tag">Elite Processing Unit</span>
+        
+        <div class="input-group">
+            <input type="text" id="query" placeholder="Enter your query, human..." />
+        </div>
+
+        <button id="btn" onclick="startProcessing()">Initiate Analysis</button>
+        
+        <div class="loader" id="loader"></div>
+        
+        <div class="status-container" id="logs">
+            <span class="status-line">> System Ready...</span>
+            <span class="status-line">> Waiting for input signal...</span>
+        </div>
+
+        <div class="meme-result" id="roastOutput"></div>
+    </div>
+</div>
+
+<script>
+const roasts = [
+    "Dimaag hai ya showpiece? Kabhi use bhi kar liya kar!",
+    "Tera IQ dekh ke mere circuit mein short-circuit ho gaya.",
+    "System Error: User's brain is running on 2G in a 5G world.",
+    "Itni stupidity? NASA ko call karna padega research ke liye.",
+    "Bhai, tera logic dekh ke Newton ne apni gravity badal li.",
+    "Akal badam khane se aati hai, mere sar khane se nahi!",
+    "Tu wahi hai na jo andhere mein light jalane ke liye torch dhoodhta hai?",
+    "Your brain is like a browser with 500 tabs open. All of them are frozen.",
+    "Tera dimaag OLX pe bech de, 'Fresh & Unused' condition mein hai.",
+    "Intelligence tere peeche bhag rahi hai, par tu hamesha jeet jata hai.",
+    "Kya matlab ki tum bachpan se hi AI ki beizzati karne ke shaukeen ho?",
+    "Error 404: Logic not found in user's query.",
+    "Tera dimaag khali hai, bilkul tere bank balance ki tarah.",
+    "Beta, career pe dhyan do, AI se gaaliyan khane se ghar nahi chalta.",
+    "Tu wahi hai na jo fridge khol ke bhool jata hai ki kya chahiye tha?",
+    "Science ne bohot tarakki ki hai, par tera kuch nahi ho sakta."
+];
+
+let lastIndex = -1;
+
+function startProcessing() {
+    const query = document.getElementById("query").value;
+    const btn = document.getElementById("btn");
+    const logs = document.getElementById("logs");
+    const loader = document.getElementById("loader");
+    const roastBox = document.getElementById("roastOutput");
+
+    if(!query.trim()) {
+        logs.innerHTML = "<span class='status-line' style='color:var(--danger)'>> Error: Input required!</span>";
+        return;
+    }
+
+    btn.style.display = "none";
+    roastBox.style.display = "none";
+    loader.style.display = "block";
+    logs.innerHTML = "<span class='status-line'>> Accessing VIP Core...</span>";
+
+    const steps = [
+        "> Bypassing Firewall...",
+        "> Scanning Neural Pathways (Empty)...",
+        "> Overclocking Logic Engine...",
+        "> Finalizing Savage Response..."
+    ];
+
+    let step = 0;
+    const interval = setInterval(() => {
+        if(step < steps.length) {
+            logs.innerHTML += `<span class='status-line'>${steps[step]}</span>`;
+            logs.scrollTop = logs.scrollHeight;
+            step++;
+        } else {
+            clearInterval(interval);
+            showRoast();
+        }
+    }, 700);
+}
+
+function showRoast() {
+    const btn = document.getElementById("btn");
+    const loader = document.getElementById("loader");
+    const roastBox = document.getElementById("roastOutput");
+    
+    loader.style.display = "none";
+    btn.style.display = "block";
+
+    let index;
+    do {
+        index = Math.floor(Math.random() * roasts.length);
+    } while(index === lastIndex);
+    
+    lastIndex = index;
+    roastBox.innerHTML = "<span style='color:var(--vip-gold)'>[AI_RESPONSE]:</span> " + roasts[index];
+    roastBox.style.display = "block";
+
+    // Premium Sound Effect
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.5);
+    gain.gain.fadeOut = 0.5;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.5);
+}
+</script>
+</body>
+</html>
